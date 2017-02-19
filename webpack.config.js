@@ -125,9 +125,7 @@ module.exports = [
         },
         output: {
             filename: "setup.[name].js",
-            path: BUILD,
-            // make sure port 8090 is used when launching webpack-dev-server
-            publicPath: "http://localhost:8090/assets"
+            path: BUILD
         },
         module: {
             rules: [
@@ -177,13 +175,13 @@ module.exports = [
                 {
                     test: /\.[ot]tf$/,
                     use: [
-                        { loader: "url-loader" }
+                        { loader: "file-loader" }
                     ]
                 },
                 {
                     test: /\.png$/i,
                     use: [
-                        { loader: "url-loader" },
+                        { loader: "file-loader" },
                         {
                             loader: "image-webpack-loader",
                             query: imageWebpackLoaderQuery
@@ -223,9 +221,7 @@ module.exports = [
         },
         output: {
             filename: "popup.[name].js",
-            path: BUILD,
-            // make sure port 8090 is used when launching webpack-dev-server
-            publicPath: "http://localhost:8090/assets"
+            path: BUILD
         },
         module: {
             loaders: [
@@ -258,7 +254,7 @@ module.exports = [
                 {
                     test: /\.[ot]tf$/,
                     use: [
-                        { loader: "url-loader" }
+                        { loader: "file-loader" }
                     ]
                 }
             ]
